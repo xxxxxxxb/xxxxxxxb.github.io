@@ -5,7 +5,7 @@ myImage.onclick = function() {
         myImage.setAttribute('src','main/img/v2-89aa40908b00c7d23fd265e897fe2989_r.jpg');
     }
     else if(mySrc === 'main/img/v2-89aa40908b00c7d23fd265e897fe2989_r.jpg'){
-        myImage.setAttribute('src','main/img/02789FA6-ABFD-47FB-9630-552DE0575855.jpeg');
+        myImage.setAttribute('src','main/img/21308FF5-D5DD-4C64-BC1B-FAE10BE8BE15.jpeg');
     }
     else{
          myImage.setAttribute('src','main/img/2233jk.jpg');
