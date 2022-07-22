@@ -6,17 +6,6 @@
         <script src="https://cdn.staticfile.org/vue/2.7.0/vue.min.js"></script>
     </head>
 <body style="background-color: rgb(243, 233, 233);">
-    <div id="app">
-        <p>{{ message }}</p>
-    </div>
-    <script>
-        new Vue({
-          el: '#app',
-          data: {
-            message: 'Hello Vue.js!'
-          }
-        })
-        </script>
     <div class ="music">
         <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=1824020871&auto=1&height=32"></iframe>
     </div>
@@ -63,6 +52,22 @@
             <h4>&emsp;&emsp;&emsp;&emsp;2022/7/20</h4>
             <p>&emsp;&emsp;&emsp;&emsp;今天是NOC的决赛，只有16道题，但最后三题根本不会，寄了，不过那个比赛备考群里也没有几个人说是会做最后那几题，况且我也没有正经学过Python</p>
         </div>
+        <!--zhelikaishiqiguaidecode-->
+        <div id="app">
+            <ul id="board" class="white normal">
+            <li class="square" v-for="i, idx in datas" @click=set(idx)>{{i}}</li>
+            </ul>
+            <div id="console">
+            <div id="hint" class="white">{{hint}}</div>
+            <input type="button" class="white" id="restart" value="restart" @click="init()"/>
+            <ul id="history" class="normal">
+             <li class="history" v-for="i, idx in history">
+             <input type="button" class="white" :value="'go to step' + (idx + 1)" @click=jump(idx) />
+             </li>
+            </ul>
+            </div>
+           </div>
+        <!--jieshu-->
     </div>
     <script src="main/main.js" defer></script>
 </body>

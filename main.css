@@ -11,3 +11,66 @@
     bottom: 0;
     right: 0;
 }
+
+.white {
+    background: #fff;
+    border-radius: 11px;
+    outline: none;
+    border: none;
+    }
+    
+    .normal {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    }
+    
+    #app {
+    display: flex;
+    justify-content: space-between;
+    width: 450px;
+    height: 306px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    }
+    
+    #board {
+    display: flex;
+    width: 306px;
+    height: 306px;
+    flex-wrap: wrap;
+    overflow: hidden;
+    }
+    
+    #hint {
+    width: 100px;
+    height: 22px;
+    text-align: center;
+    margin: 10px;
+    }
+    
+    #restart {
+    width: 70px;
+    height: 22px;
+    margin: 10px;
+    }
+    
+    #history，
+    .history {
+    margin: 5px;
+    }
+    
+    .square {
+    height: 100px;
+    width: 100px;
+    border: #ebebeb solid 1px;
+    flex: 0 0 auto;
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 100px;
+    text-align: center;
+    }
