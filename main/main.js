@@ -1,4 +1,4 @@
-let myImage = document.querySelector('img');
+/*let myImage = document.querySelector('img');
 myImage.onclick = function() {
     mySrc = myImage.getAttribute('src');
     if(mySrc === 'main/img/2233jk.jpg'){
@@ -11,3 +11,4 @@ myImage.onclick = function() {
          myImage.setAttribute('src','main/img/2233jk.jpg');
     }
 }
+*/
