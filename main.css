@@ -1,15 +1,15 @@
-/*.images {
+.images {
     float: right;
-    width:20%;
+    width: 20%;
 }
+
 .blogs {
-    float : left;
-    width:80%;
+    float: left;
+    width: 80%;
 }
+
 .music {
     position: fixed;
     bottom: 0;
     right: 0;
 }
-*/
-
