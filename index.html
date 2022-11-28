@@ -1,0 +1,91 @@
+<html lang="zh-cn">
+<meta charset ="utf-8">
+<head>
+    <style>
+        @import url("main.css");
+    </style>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>xxxxxxxb</title>
+</head>
+
+<body style="background-color: rgb(243, 233, 233);">
+    <div class="music">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52
+            src="//music.163.com/outchain/player?type=2&id=1824020871&auto=1&height=32"></iframe>
+    </div>
+    <div id="images">
+        <img @click="changeTheSrc" v-bind:src="mySrc">
+    </div>
+    <div class="blog">
+        <h2 style="text-align: center;"> xxxxxxxb 的小站</h2>
+        <div class="blogs">
+            <h4>&emsp;&emsp;&emsp;&emsp;2022/1/20</h4>
+            <p>&emsp;&emsp;&emsp;&emsp;这是第一条blogs</p>
+            <br><br>&emsp;&emsp;&emsp;&emsp;
+            <h4>&emsp;&emsp;&emsp;&emsp;2022/1/21</h4>
+            <p>&emsp;&emsp;&emsp;&emsp;令人作呕的寒假作业呐！！！！！</p>
+            <p>&emsp;&emsp;&emsp;&emsp;哼哼哼啊啊啊啊啊啊啊啊啊<br>啊啊啊啊啊啊啊1145141919810</p>
+            <h4>&emsp;&emsp;&emsp;&emsp;2022/1/24</h4>
+            <p>&emsp;&emsp;&emsp;&emsp;回到老家</p>
+            <h4>&emsp;&emsp;&emsp;&emsp;2022/2/26</h4>
+            <p>&emsp;&emsp;&emsp;&emsp;小更一下</p>
+            <iframe src="//player.bilibili.com/player.html?bvid=BV1GJ411x7h7&page=1" allowfullscreen="allowfullscreen"
+                width="100%" height="500" scrolling="no" frameborder="0"
+                sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
+            <h4>&emsp;&emsp;&emsp;&emsp;2022/6/7</h4>
+            <p>&emsp;&emsp;&emsp;&emsp;6月24日期末考试，距离毕业剩下已经不到两周，永别力！（喜
+            <p>
+            <p>&emsp;&emsp;&emsp;&emsp;今天高考放假改好了图片切换器，今后可能会上线更多图片（如果我还记得)，这个网站就算是一个日记了</p>
+            <br><strong>&emsp;&emsp;&emsp;&emsp;预祝高考成功</strong>
+            <h4>&emsp;&emsp;&emsp;&emsp;2022/6/8</h4>
+            <p>&emsp;&emsp;&emsp;&emsp;天哪，我真的烦死了！做了几道有理数计算题，还不是一般的计算题，括号都数不清打了几个的那种（见图片），12道题错了4个，哎呦，烦死了；然后开始改错，tnnd，就一道题改对了，心态都要炸了；最绝的是给我妈打电话，告诉他这是，而后她就开始叨叨我计算不好，多练练。。。。。。之类的话，真就毫不顾及或者安慰一下我的心情。。。。。。烦死了
+            </p>
+            <h4>&emsp;&emsp;&emsp;&emsp;2022/6/15</h4>
+            <p>&emsp;&emsp;&emsp;&emsp;又在评选，“毛遂自荐”并且选上之后就开始看书，一群人在那里互怼。。。之后还有人推荐时不知是什么因素导致，开始带着哭腔。。。</p>
+            <p>&emsp;&emsp;&emsp;&emsp;git真好用</p>
+            <h4>&emsp;&emsp;&emsp;&emsp;2022/6/16</h4>
+            <p>&emsp;&emsp;&emsp;&emsp;自习课，人声的嘈杂在四近，单调的作业在身边，无疑是一个头脑昏沉，心烦意乱的无聊自习。。。但那嘈杂的人声中，最刺耳的莫过于是看我们的老师，强调自习纪律（并高谈阔论你们上了三十七中以后看看那严明的纪律不把你们罚的怀疑人生，说我们没有见识之类（你有见识跟我们学生争辩些什么！这就能显出你有见识么？））之后，似乎将自己的话语忘得一干二净，也开始聊天
+            </p>
+            <h4>&emsp;&emsp;&emsp;&emsp;2022/6/17</h4>
+            <p>&emsp;&emsp;&emsp;&emsp;这世界真是什么人都有，有人在下课时要借另一个人的书抄写词语，但这个人不借，因为他没写完，而后借书那个人就用修正带把有书的那个人的书给涂掉了。。。然后还十分大义凛然说他写的太慢了。。。
+            </p>
+            <h4>&emsp;&emsp;&emsp;&emsp;2022/6/25</h4>
+            <p>&emsp;&emsp;&emsp;&emsp;爷毕业了！！！（狂喜）</p>
+            <p>&emsp;&emsp;&emsp;&emsp;再也不用看见那些垃圾同学。。。但是。。。我的朋友也会少了见面的机会，希望以后我还能记得他们</p>
+            <h4>&emsp;&emsp;&emsp;&emsp;2022/6/28</h4>
+            <p>&emsp;&emsp;&emsp;&emsp;前几天去考了一个NOC（全国中小学生信息技术创新与实践大赛（挺水一比赛，从名字就可以看出）），Python（其实根本没有正经学，自己看书学的）。之前xes有一个备考群，我妈硬要说里面有有用的，让我看看（其实根本没看），昨天出分以后，群里面没有一个晋级的。。。还是在xes学了好几年的那种，那个群里只有我晋级力（好像）。。。这种少儿编程纯纯骗钱
+            </p>
+            <h4>&emsp;&emsp;&emsp;&emsp;2022/6/29</h4>
+            <p>&emsp;&emsp;&emsp;&emsp;没什么好写的，但是还是想更新一下。。。</p>
+            <p>&emsp;&emsp;&emsp;&emsp;推荐一首歌：Ready to go</p>
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
+                src="//music.163.com/outchain/player?type=2&id=1958574435&auto=1&height=66"></iframe>
+            <h4>&emsp;&emsp;&emsp;&emsp;2022/7/19</h4>
+            <p>&emsp;&emsp;&emsp;&emsp;自从上次在这个网站更新，差不多已经过去了一个月<br>&emsp;&emsp;&emsp;&emsp;原因很明显（并不），电脑坏了。不过不是硬件层面的问题，而是系统————在装双系统的时候，忘记了新系统的用户名，且原来的系统可能因为没有独立挂载的efi启动分区，也进不去了。然后我尝试重装新的系统，然后就进不去任何一个系统，开机自动进入grub引导系统。所幸，硬盘中的文件依然存活，这几天回去找人帮忙修一下，也许可以找回那些文件<br />&emsp;&emsp;&emsp;&emsp;现在的更新是我用我的新电脑写出来的，这个电脑用差不多一个星期的努力组装起来的（这主板和机箱的跳线设计真反人类）,装了一个Ubuntu系统，是一个linux的发行版<br />&emsp;&emsp;&emsp;&emsp;24号那天还要去一个女同学的生日会，还不知道该买什么礼物
+            </p>
+            <h4>&emsp;&emsp;&emsp;&emsp;2022/7/20</h4>
+            <p>&emsp;&emsp;&emsp;&emsp;今天是NOC的决赛，只有16道题，但最后三题根本不会，寄了，不过那个比赛备考群里也没有几个人说是会做最后那几题，况且我也没有正经学过Python</p>
+            <h4>&emsp;&emsp;&emsp;&emsp;2022/8/22</h4>
+            <p>&emsp;&emsp;&emsp;&emsp;马上就要开学了，但是我还不知道我要去哪个初中。。。</p>
+            <p>&emsp;&emsp;&emsp;&emsp;你敢信？我为了一个安装包不到500KB的软件安装了一个6GB的依赖</p>
+            <h4>&emsp;&emsp;&emsp;&emsp;2022/8/23</h4>
+            <p>&emsp;&emsp;&emsp;&emsp;下面这个不明所以的动画就是我用昨天那个需要6GB逆天依赖的安装包做成的</p>
+            <video id="manimvedio" width="1920" height="1080" controls>
+                <source src="media/videos/mathvedio/1440p60/SquareToCircle.mp4" type="video/mp4">
+            </video>
+            <p>&emsp;&emsp;&emsp;&emsp;今天等一会就要去领通知书，不知道会领到那个学校的，一会再更新罢</p>
+            <h4>&emsp;&emsp;&emsp;&emsp;2022/10/11</h4>
+            <p>&emsp;&emsp;&emsp;&emsp;距离上次更新已经过去了一个多月,虽然这个网站没什么人看并且除了写写东西之外根本懒得去维护,但是今天在电脑上偶然想起来这个项目,所以特地的纪念一下</p>
+            <p>&emsp;&emsp;&emsp;&emsp;现在我的网站搬到了<a href="https://xxxxxxxb.tk">这里</a>,使用了hexo博客模板,也不用去亲自敲html代码了(但是依旧没有什么人看(笑</p>
+            <p>&emsp;&emsp;&emsp;&emsp;8/23那天是我的最后一次更新,内容是去领通知书,然而现在我已经开学一个多月了</p>
+            <h4>&emsp;&emsp;&emsp;&emsp;2022/11/17</h4>
+            <p>&emsp;&emsp;&emsp;&emsp;我xxxxxxxb又回来力！</p>
+            <p>&emsp;&emsp;&emsp;&emsp;xxxxxxxb.tk已经不再更新，因为我换了系统（在Ubuntu下安装了双系统，差点没把我累死，烧录u盘还需要开一个win10虚拟机），并且懒得迁移仓库啊</p>
+            <h4>&emsp;&emsp;&emsp;&emsp;2022/11/28</h4>
+            <p>&emsp;&emsp;&emsp;&emsp;义!务!<br>&emsp;&emsp;&emsp;&emsp;我xxxxxxxb今天作文终于得了一会A!!!!!!!!!!!!!!!!!!!!</p>
+</div>
+    </div>
+    <script src="main/main.js"></script>
+</body>
+
+</html>
