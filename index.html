@@ -15,12 +15,17 @@
         <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52"
             src="//music.163.com/outchain/player?type=2&id=1824020871&auto=1&height=32"></iframe>
     </div>
-    <!-- 图片切换器部分 -->
-    <div id="images">
-        <img @click="changeTheSrc" v-bind:src="mySrc" alt="网站动态图片">
+
+    <!-- 顶部英雄图片区域 -->
+    <div id="hero-image-section">
+        <div id="images">
+            <img @click="changeTheSrc" v-bind:src="mySrc" alt="网站动态图片">
+        </div>
+        <!-- 图片渐变虚化叠加层 -->
+        <div class="image-fade-overlay"></div>
     </div>
 
-    <!-- 主博客内容容器，应用 CSS 中的 .container 样式 -->
+    <!-- 主要内容容器，现在会与图片区域重叠 -->
     <div class="container">
         <div class="blog">
             <!-- 网站主标题，应用 CSS 中 h1 的样式 -->

@@ -7,6 +7,7 @@
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     line-height: 1.6;
+    /* 移除 body 的默认 margin 和 padding，让 hero-image-section 占据全部宽度 */
     margin: 0;
     padding: 0;
     background-color: #f8faff; /* 柔和的浅蓝色背景 */
@@ -20,19 +21,93 @@ body {
 }
 
 /*
+ * 顶部英雄图片区域样式
+ * ----------------------------------------------------
+ * 使图片占据最上方的全部宽度，并固定其高度。
+ */
+#hero-image-section {
+    position: relative; /* 用于内部元素的绝对定位 */
+    width: 100%;
+    height: 300px; /* 控制图片区域的高度，使其“扁一点” */
+    overflow: hidden; /* 隐藏超出容器的部分 */
+    /* 移除图片区域的上下边距，使其紧贴顶部 */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* 音乐播放器样式 */
+.music {
+    /* 如果希望音乐播放器浮动在图片上方，可以设置 z-index */
+    position: absolute;
+    top: 20px; /* 距离顶部 */
+    left: 50%; /* 水平居中 */
+    transform: translateX(-50%);
+    z-index: 100; /* 确保在最顶层 */
+    border-radius: 8px; /* 增加圆角 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+    background-color: rgba(255, 255, 255, 0.8); /* 略微透明的背景 */
+    padding: 5px; /* 增加内边距 */
+}
+
+/*
+ * 图片切换器 (#images) 样式
+ * ----------------------------------------------------
+ * 这是实际显示图片的容器，确保它完全填充 hero-image-section。
+ */
+#images {
+    width: 100%;
+    height: 100%;
+    position: relative; /* 用于 img 绝对定位 */
+}
+
+/*
+ * 图片本身 (在 #images 内部) 样式
+ * ----------------------------------------------------
+ * 确保图片完全覆盖其父容器，并保持不变的大小。
+ */
+#images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 裁剪图片以填充容器，保持宽高比 */
+    display: block;
+    margin: 0; /* 移除自动边距 */
+    border-radius: 0; /* 移除圆角，因为现在是全宽背景图的感觉 */
+    box-shadow: none; /* 移除阴影 */
+    transition: transform 0.3s ease-out; /* 添加平滑过渡效果 */
+    cursor: pointer; /* 表示可点击 */
+}
+
+/*
+ * 图片渐变虚化叠加层
+ * ----------------------------------------------------
+ * 创建一个从透明到背景色的渐变，模拟图片与下方内容融合的虚化效果。
+ */
+.image-fade-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px; /* 虚化区域的高度 */
+    /* 从透明到 body 背景色的渐变 */
+    background: linear-gradient(to top, #f8faff 0%, rgba(248, 250, 255, 0.7) 50%, rgba(248, 250, 255, 0) 100%);
+    z-index: 1; /* 确保在图片上方，但在内容下方 */
+}
+
+/*
  * 容器和布局
  * ----------------------------------------------------
  * 设置主要内容区域的最大宽度和居中显示。
- * 添加阴影和圆角，使其看起来更像一个卡片。
+ * 使用负 margin-top 使内容延伸并重叠图片。
  */
 .container {
     max-width: 960px;
-    margin: 40px auto; /* 上下留白，左右居中 */
+    margin: -80px auto 40px auto; /* 负 margin-top 使其向上延伸并重叠图片 */
     padding: 30px;
     background-color: #ffffff; /* 白色背景 */
     border-radius: 12px; /* 圆角边框 */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* 柔和的阴影效果 */
-    position: relative; /* 用于可能的内部定位 */
+    position: relative; /* 确保内容在图片上方 */
+    z-index: 2; /* 确保内容层级最高 */
 }
 
 /*
@@ -109,11 +184,11 @@ ul li, ol li {
 }
 
 /*
- * 图片样式 (通用)
+ * 其他图片样式 (非 hero 图片)
  * ----------------------------------------------------
  * 确保图片在容器内响应式显示，并添加圆角。
  */
-img {
+img:not(#images img) { /* 排除顶部 hero 图片 */
     max-width: 100%;
     height: auto;
     display: block; /* 移除图片底部额外的空间 */
@@ -121,20 +196,6 @@ img {
     border-radius: 8px; /* 圆角 */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* 轻微阴影 */
 }
-
-/*
- * 特定图片样式 (#images div 中的图片)
- * ----------------------------------------------------
- * 调整页面顶部大图的尺寸和间距，使其在桌面端更协调。
- */
-#images img {
-    max-width: 450px; /* 在桌面端限制最大宽度，可以根据需要调整此值 */
-    margin-top: 40px; /* 增加顶部间距，使其与音乐播放器有更好间隔 */
-    margin-bottom: 40px; /* 增加底部间距，使其与博客内容有更好间隔 */
-    border-radius: 15px; /* 稍微大一点的圆角，更柔和 */
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12); /* 更明显一点的阴影，突出其作为顶部元素 */
-}
-
 
 /*
  * 按钮样式 (如果您的页面有按钮的话)
@@ -169,8 +230,16 @@ img {
         font-size: 0.95em; /* 手机上字体略小 */
     }
 
+    #hero-image-section {
+        height: 200px; /* 手机上图片区域高度更小 */
+    }
+
+    .image-fade-overlay {
+        height: 80px; /* 手机上虚化区域高度更小 */
+    }
+
     .container {
-        margin: 20px 15px; /* 手机上左右边距小一些 */
+        margin: -50px 15px 20px 15px; /* 手机上负 margin-top 变小，左右边距小一些 */
         padding: 20px;
         box-shadow: none; /* 手机上移除阴影，减少视觉负担 */
     }
@@ -186,15 +255,6 @@ img {
     p {
         font-size: 1em;
     }
-
-    /* 手机上图片依然可以占用较大空间 */
-    #images img {
-        max-width: 90%; /* 手机上允许图片占用更多宽度 */
-        margin-top: 25px;
-        margin-bottom: 25px;
-        border-radius: 12px; /* 保持圆角 */
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* 稍微减弱阴影 */
-    }
 }
 
 @media (max-width: 480px) {
@@ -205,7 +265,13 @@ img {
     h2 {
         font-size: 1.4em;
     }
-    #images img {
-        max-width: 95%; /* 进一步增加手机上图片的宽度占比 */
+    #hero-image-section {
+        height: 180px; /* 更小的手机屏幕上高度进一步缩小 */
+    }
+    .image-fade-overlay {
+        height: 70px;
+    }
+    .container {
+        margin-top: -40px; /* 进一步减小重叠 */
     }
 }
