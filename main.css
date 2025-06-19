@@ -1,15 +1,185 @@
-#images {
-    float: right;
-    width: 20%;
+/*
+ * 全局样式
+ * ----------------------------------------------------
+ * 设定基础字体、背景颜色和盒模型。
+ * 使用 'Inter' 字体，如果不可用则回退到无衬线字体。
+ */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f8faff; /* 柔和的浅蓝色背景 */
+    color: #333; /* 深灰色文本 */
+    box-sizing: border-box; /* 确保所有元素的盒模型一致 */
 }
 
-.blogs {
-    float: left;
-    width: 80%;
+/* 确保所有元素继承盒模型 */
+*, *::before, *::after {
+    box-sizing: inherit;
 }
 
-.music {
-    position: fixed;
-    bottom: 0;
-    right: 0;
+/*
+ * 容器和布局
+ * ----------------------------------------------------
+ * 设置主要内容区域的最大宽度和居中显示。
+ * 添加阴影和圆角，使其看起来更像一个卡片。
+ */
+.container {
+    max-width: 960px;
+    margin: 40px auto; /* 上下留白，左右居中 */
+    padding: 30px;
+    background-color: #ffffff; /* 白色背景 */
+    border-radius: 12px; /* 圆角边框 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* 柔和的阴影效果 */
+    position: relative; /* 用于可能的内部定位 */
+}
+
+/*
+ * 标题样式
+ * ----------------------------------------------------
+ * 调整各级标题的大小、颜色和间距。
+ */
+h1, h2, h3, h4, h5, h6 {
+    color: #2c3e50; /* 深蓝色标题 */
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 700; /* 加粗 */
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.8em;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: -0.02em; /* 微调字间距 */
+}
+
+h2 {
+    font-size: 2.2em;
+    border-bottom: 1px solid #e0e6f1; /* 底部细线 */
+    padding-bottom: 10px;
+    margin-top: 40px;
+}
+
+h3 {
+    font-size: 1.8em;
+    margin-top: 30px;
+}
+
+/*
+ * 段落和文本样式
+ * ----------------------------------------------------
+ * 优化段落的阅读体验。
+ */
+p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #555; /* 略浅于标题的文本颜色 */
+}
+
+/*
+ * 链接样式
+ * ----------------------------------------------------
+ * 美化超链接，使其在视觉上更具吸引力且易于区分。
+ */
+a {
+    color: #007bff; /* 标准蓝色链接 */
+    text-decoration: none; /* 移除下划线 */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* 平滑过渡效果 */
+}
+
+a:hover {
+    color: #0056b3; /* 鼠标悬停时变深 */
+    text-decoration: underline; /* 鼠标悬停时显示下划线 */
+}
+
+/*
+ * 列表样式
+ * ----------------------------------------------------
+ * 调整无序列表和有序列表的间距。
+ */
+ul, ol {
+    margin-bottom: 15px;
+    padding-left: 25px;
+}
+
+ul li, ol li {
+    margin-bottom: 8px;
+}
+
+/*
+ * 图片样式
+ * ----------------------------------------------------
+ * 确保图片在容器内响应式显示，并添加圆角。
+ */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* 移除图片底部额外的空间 */
+    margin: 20px auto; /* 居中显示，上下有间距 */
+    border-radius: 8px; /* 圆角 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* 轻微阴影 */
+}
+
+/*
+ * 按钮样式 (如果您的页面有按钮的话)
+ * ----------------------------------------------------
+ * 提供一个基本的漂亮按钮样式。
+ */
+.button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* 悬停时略微上浮 */
+}
+
+/*
+ * 媒体查询 (响应式设计)
+ * ----------------------------------------------------
+ * 针对不同屏幕尺寸调整样式，确保在移动设备上也有良好的体验。
+ */
+@media (max-width: 768px) {
+    body {
+        font-size: 0.95em; /* 手机上字体略小 */
+    }
+
+    .container {
+        margin: 20px 15px; /* 手机上左右边距小一些 */
+        padding: 20px;
+        box-shadow: none; /* 手机上移除阴影，减少视觉负担 */
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
 }
