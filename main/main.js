@@ -46,6 +46,17 @@ const guestbookMessageInput = document.getElementById('guestbook-message')
 const guestbookStatus = document.getElementById('guestbook-status')
 const guestbookList = document.getElementById('guestbook-list')
 
+async function parseJsonResponse(response, invalidJsonMessage) {
+    const responseText = await response.text()
+    const contentType = response.headers.get('content-type') || ''
+
+    if (!contentType.includes('application/json')) {
+        throw new Error(invalidJsonMessage)
+    }
+
+    return JSON.parse(responseText)
+}
+
 function setGuestbookStatus(message, state) {
     if (!guestbookStatus) {
         return
@@ -119,7 +130,7 @@ async function fetchGuestbookMessages() {
             Accept: 'application/json'
         }
     })
-    const payload = await response.json()
+    const payload = await parseJsonResponse(response, '留言接口返回了网页而不是 JSON。请检查 Nginx 是否把 /api/ 转发到了 Node 服务。')
 
     if (!response.ok) {
         throw new Error(payload.error || '加载留言失败。')
@@ -170,15 +181,14 @@ if (guestbookForm && guestbookNameInput && guestbookMessageInput) {
                     message
                 })
             })
-            const payload = await response.json()
+            const payload = await parseJsonResponse(response, '留言接口返回了网页而不是 JSON。请检查 Nginx 是否把 /api/ 转发到了 Node 服务。')
 
             if (!response.ok) {
                 throw new Error(payload.error || '提交失败。')
             }
 
             guestbookForm.reset()
-            renderGuestbookMessages(payload.messages)
-            setGuestbookStatus('留言提交成功。', 'success')
+            setGuestbookStatus(payload.message || '留言已提交，等待审核后显示。', 'success')
         }
         catch (error) {
             setGuestbookStatus(error.message, 'error')

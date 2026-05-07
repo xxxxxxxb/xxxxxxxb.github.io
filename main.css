@@ -220,6 +220,28 @@ img:not(#images img) { /* 排除顶部 hero 图片 */
     transform: translateY(-2px); /* 悬停时略微上浮 */
 }
 
+.button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.button-secondary {
+    background-color: #6b7280;
+}
+
+.button-secondary:hover {
+    background-color: #4b5563;
+}
+
+.button-danger {
+    background-color: #c0392b;
+}
+
+.button-danger:hover {
+    background-color: #962d22;
+}
+
 .guestbook {
     margin-top: 50px;
     padding-top: 10px;
@@ -310,6 +332,29 @@ img:not(#images img) { /* 排除顶部 hero 图片 */
     margin: 0;
 }
 
+.admin-container {
+    margin-top: 40px;
+}
+
+.admin-login-form {
+    margin-bottom: 40px;
+}
+
+.admin-section {
+    margin-top: 40px;
+}
+
+.admin-actions,
+.admin-item-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.admin-button {
+    padding: 10px 18px;
+}
+
 /*
  * 媒体查询 (响应式设计)
  * ----------------------------------------------------
@@ -337,6 +382,11 @@ img:not(#images img) { /* 排除顶部 hero 图片 */
     .guestbook-item-header {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .admin-actions,
+    .admin-item-actions {
+        flex-direction: column;
     }
 
     h1 {

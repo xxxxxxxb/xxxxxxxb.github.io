@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="main.css">
+    <title>留言审核</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+</head>
+
+<body>
+    <div class="container admin-container">
+        <div class="blog">
+            <h1>留言审核</h1>
+            <p>输入部署在 VPS 上的 <code>ADMIN_PASSWORD</code>，然后审核待显示的留言。</p>
+
+            <form id="admin-login-form" class="guestbook-form admin-login-form">
+                <label class="guestbook-label" for="admin-password">管理员密码</label>
+                <input id="admin-password" autocomplete="current-password" placeholder="ADMIN_PASSWORD" type="password">
+                <div class="admin-actions">
+                    <button class="button" type="submit">连接审核接口</button>
+                    <button class="button button-secondary" id="admin-logout-button" type="button">清除密码</button>
+                </div>
+                <p class="guestbook-status" id="admin-status" aria-live="polite"></p>
+            </form>
+
+            <section class="admin-section">
+                <h2>待审核留言</h2>
+                <div class="guestbook-list" id="pending-list" aria-live="polite"></div>
+            </section>
+
+            <section class="admin-section">
+                <h2>已通过留言</h2>
+                <div class="guestbook-list" id="approved-list" aria-live="polite"></div>
+            </section>
+        </div>
+    </div>
+    <script src="main/admin.js"></script>
+</body>
+</html>
