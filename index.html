@@ -110,6 +110,21 @@
                 <h4>2022/1/20</h4>
                 <p>这是第一条blogs</p>
             </div>
+            <section class="guestbook">
+                <h2>留言板</h2>
+                <p>如果你路过这里，欢迎留下点什么。</p>
+                <form id="guestbook-form" class="guestbook-form">
+                    <label class="guestbook-label" for="guestbook-name">昵称（可选）</label>
+                    <input id="guestbook-name" name="author" maxlength="40" placeholder="匿名访客" type="text">
+
+                    <label class="guestbook-label" for="guestbook-message">留言内容</label>
+                    <textarea id="guestbook-message" name="message" maxlength="500" placeholder="想说什么都可以，不过请温柔一点。" required rows="5"></textarea>
+
+                    <button class="button" type="submit">提交留言</button>
+                    <p class="guestbook-status" id="guestbook-status" aria-live="polite"></p>
+                </form>
+                <div class="guestbook-list" id="guestbook-list" aria-live="polite"></div>
+            </section>
         </div>
     </div>
     <script src="main/main.js"></script>

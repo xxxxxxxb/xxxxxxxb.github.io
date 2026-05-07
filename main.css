@@ -220,6 +220,96 @@ img:not(#images img) { /* 排除顶部 hero 图片 */
     transform: translateY(-2px); /* 悬停时略微上浮 */
 }
 
+.guestbook {
+    margin-top: 50px;
+    padding-top: 10px;
+}
+
+.guestbook-form {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.guestbook-label {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.guestbook-form input,
+.guestbook-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d7dfef;
+    border-radius: 10px;
+    background-color: #fbfcff;
+    color: #333;
+    font: inherit;
+}
+
+.guestbook-form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.guestbook-form input:focus,
+.guestbook-form textarea:focus {
+    outline: none;
+    border-color: #7aa7ff;
+    box-shadow: 0 0 0 4px rgba(122, 167, 255, 0.15);
+}
+
+.guestbook-status {
+    min-height: 24px;
+    margin: 0;
+    font-size: 0.95em;
+}
+
+.guestbook-status[data-state="error"] {
+    color: #c0392b;
+}
+
+.guestbook-status[data-state="success"] {
+    color: #1f7a3d;
+}
+
+.guestbook-list {
+    display: grid;
+    gap: 16px;
+}
+
+.guestbook-empty,
+.guestbook-item {
+    padding: 18px 20px;
+    border-radius: 12px;
+    background-color: #f7f9ff;
+    border: 1px solid #e4eaf5;
+}
+
+.guestbook-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.guestbook-author {
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.guestbook-time {
+    color: #6b7280;
+    font-size: 0.95em;
+}
+
+.guestbook-item p,
+.guestbook-empty {
+    margin: 0;
+}
+
 /*
  * 媒体查询 (响应式设计)
  * ----------------------------------------------------
@@ -242,6 +332,11 @@ img:not(#images img) { /* 排除顶部 hero 图片 */
         margin: -50px 15px 20px 15px; /* 手机上负 margin-top 变小，左右边距小一些 */
         padding: 20px;
         box-shadow: none; /* 手机上移除阴影，减少视觉负担 */
+    }
+
+    .guestbook-item-header {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     h1 {
